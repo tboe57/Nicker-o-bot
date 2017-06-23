@@ -14,7 +14,15 @@ async def on_ready():
     print("ID: {}".format(client.user.id))
     #Extra 1
     await client.change_presence(game=discord.Game(name='type n!help'))
-
+    
+@client.command(pass_context=True)
+async def TurnOff(ctx):
+    if ctx.message.author.id == "217328624829726720":  # thats ur id
+        await client.say("Going offline")
+        await client.logout()
+    else:
+        await client.say("sorry, my maker is a crackhead and won't let you execute this command.... \n#rekt")
+        
 @client.command(pass_context=True)
 async def ping(ctx):
     await client.say("Pong!")
